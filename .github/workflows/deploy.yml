@@ -37,11 +37,6 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Upload Lockfile
-        uses: actions/upload-artifact@v3
-        with:
-          name: lockfile
-          path: yarn.lock
 
       - name: Build (koishi-plugin-docs)
         run: yarn build
