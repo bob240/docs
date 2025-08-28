@@ -39,7 +39,10 @@ jobs:
 
 
       - name: Build (koishi-plugin-docs)
-        run: yarn build
+        run: |
+          yarn build
+          tar -zcvf ../docs.tar.gz ./
+          sudo mv ../docs.tar.gz /mnt
 
 
       - name: Release "docs"
@@ -49,4 +52,4 @@ jobs:
           tag_name: github_run
           name: 1
           files: |
-           ./vitepress/dist/*
+           /mnt/docs.tar.gz
