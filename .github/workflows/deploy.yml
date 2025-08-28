@@ -41,7 +41,7 @@ jobs:
       - name: Build (koishi-plugin-docs)
         run: |
           yarn build
-          tar -zcvf ../docs.tar.gz ./
+          tar -zcvf ../docs.tar.gz ./.vitepress/dist
           sudo mv ../docs.tar.gz /mnt
 
 
